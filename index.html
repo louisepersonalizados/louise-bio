@@ -191,7 +191,7 @@ const CONFIG = {
 
   instagram: "louisepersonalizados.oficial",  // só o @, sem o "@"
   facebook:  "https://www.facebook.com/share/1A6wy4Li8Q/", // link completo da página
-  site:      "",                              // vazio = mostra "em breve". Quando tiver, coloque o link completo (o UTM é automático)
+  site:      "https://claude.ai/artifact/VqAab9M9YnFHRiN4dgB8Kc", // vazio = mostra "em breve"
   shopee:    "https://br.shp.ee/JhLkzkvG",    // link completo da loja
 
   // Frase de apresentação: "inicio" em Poppins + "destaque" na fonte manuscrita
@@ -230,7 +230,7 @@ const ICONS = {
 const C = CONFIG;
 const waLink = "https://wa.me/55" + C.whatsapp.replace(/\D/g,"") + "?text=" + encodeURIComponent(C.mensagemWhatsapp);
 const igLink = "https://instagram.com/" + C.instagram.replace(/^@/,"");
-const siteLink = C.site ? C.site + (C.site.includes("?") ? "&" : "?") + "utm_source=instagram&utm_medium=bio" : "";
+const siteLink = !C.site ? "" : C.site.includes("claude.ai") ? C.site : C.site + (C.site.includes("?") ? "&" : "?") + "utm_source=instagram&utm_medium=bio";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 /* Frase: palavra por palavra + destaque manuscrito */
